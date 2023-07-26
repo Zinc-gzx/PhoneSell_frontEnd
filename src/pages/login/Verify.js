@@ -11,7 +11,7 @@ export const Verify = () => {
 
     let token = searchParams.get("token");
     useEffect(() => {
-        axios.get('http://localhost:8080/api/auth/verify', {
+        axios.get('https://phonesellbackend.onrender.com/api/auth/verify', {
             params:{
                 token: token
             }

@@ -19,7 +19,7 @@ const SearchBar = ({ cartArray, setCartArray }) => {
 
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/home/home', {
+    axios.get('https://phonesellbackend.onrender.com/api/home/home', {
     }).then(function (response) {
       console.log(response);
       const temp = response;

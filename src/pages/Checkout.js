@@ -64,7 +64,7 @@ export const Checkout = () => {
   const handlePay = (e) => {
     e.preventDefault();
     // Push to back end
-    axios.post('http://localhost:8080/api/home/checkout', {
+    axios.post('https://phonesellbackend.onrender.com/api/home/checkout', {
       // stocks:stock,
       phone: phoneData,
     }).then(function (response) {

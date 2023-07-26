@@ -23,7 +23,7 @@ export const Home = () => {
     // Get response, all phone data,  from backend
     const [cartArray, setCartArray] = useRecoilState(catArrWithBasePrice);
     useEffect(() => {
-        axios.get('http://localhost:8080/api/home/home', {
+        axios.get('https://phonesellbackend.onrender.com/api/home/home', {
         }).then(function (response) {
             console.log("Home: ", response);
             const temp = response;

@@ -34,7 +34,7 @@ export const UserProfile = () => {
     ///todo
     let id = Cookies.get('id');
     const profile = () => {
-        axios.get('http://localhost:8080/api/auth/user-profile',{
+        axios.get('https://phonesellbackend.onrender.com/api/auth/user-profile',{
                 params:{
                     id: id
                 }
@@ -56,7 +56,7 @@ export const UserProfile = () => {
     const editSubmit = (e) => {
         // e.preventDefault();
         setEditStatus(true);
-        axios.post('http://localhost:8080/api/auth/user-profile-edit', {
+        axios.post('https://phonesellbackend.onrender.com/api/auth/user-profile-edit', {
             id: id,
             email: email,
             firstname: firstname,
@@ -74,14 +74,14 @@ export const UserProfile = () => {
     //change password
     const changePasswordSubmit = () => {
         if (passValid){
-            axios.get('http://localhost:8080/api/auth/check-password', {
+            axios.get('https://phonesellbackend.onrender.com/api/auth/check-password', {
                 params:{
                     password: password,
                     id: id
                 }
             }).then(function (response){
                 if (response.data.status == '0'){
-                    axios.post('http://localhost:8080/api/auth/reset-password-user-profile', {
+                    axios.post('https://phonesellbackend.onrender.com/api/auth/reset-password-user-profile', {
                         id: id,
                         password: newPassword
                     }).then(function (response) {
@@ -128,7 +128,7 @@ export const UserProfile = () => {
 
     const listing = (e) => {
 
-        axios.get('http://localhost:8080/api/userProfile/listing',{
+        axios.get('https://phonesellbackend.onrender.com/api/userProfile/listing',{
             params:{
                 id: id
             }
@@ -163,7 +163,7 @@ export const UserProfile = () => {
     let responseCommentList = [];
 
     const comment = (e) => {
-        axios.get('http://localhost:8080/api/userProfile/listing',{
+        axios.get('https://phonesellbackend.onrender.com/api/userProfile/listing',{
             params:{
                 id: id
             }
@@ -194,7 +194,7 @@ export const UserProfile = () => {
     }
 
     const handleAddRow = () => {
-        axios.post('http://localhost:8080/api/userProfile/add-phone', {
+        axios.post('https://phonesellbackend.onrender.com/api/userProfile/add-phone', {
             id: id,
             title: title,
             brand: brand,
@@ -222,7 +222,7 @@ export const UserProfile = () => {
 
 
     const handleDeleteRow = () => {
-        axios.post('http://localhost:8080/api/userProfile/delete-phone',{
+        axios.post('https://phonesellbackend.onrender.com/api/userProfile/delete-phone',{
             _id: selectedPhoneRows[0].phone_id
         }).then(function (response) {
             if (response.data.status == '0'){
@@ -243,7 +243,7 @@ export const UserProfile = () => {
 
     
     const enable = (e) => {
-        axios.post('http://localhost:8080/api/userProfile/enable-phone',{
+        axios.post('https://phonesellbackend.onrender.com/api/userProfile/enable-phone',{
             _id: selectedPhoneRows[0].phone_id
         }).then(function (response) {
             if (response.data.status == '0'){
@@ -256,7 +256,7 @@ export const UserProfile = () => {
         });    }
 
     const disable = (e) => {
-        axios.post('http://localhost:8080/api/userProfile/disable-phone',{
+        axios.post('https://phonesellbackend.onrender.com/api/userProfile/disable-phone',{
             _id: selectedPhoneRows[0].phone_id
         }).then(function (response) {
             if (response.data.status == '0'){
@@ -271,7 +271,7 @@ export const UserProfile = () => {
 
     const show = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8080/api/home/hide',{
+        axios.post('https://phonesellbackend.onrender.com/api/home/hide',{
             reviewers: selectedCommentRows[0].reviewer,
             phoneID: selectedCommentRows[0].phone_id,
             commentHide: false,
@@ -289,7 +289,7 @@ export const UserProfile = () => {
 
     const hide = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8080/api/home/hide',{
+        axios.post('https://phonesellbackend.onrender.com/api/home/hide',{
             _id: selectedCommentRows[0].phone_id,
             reviewers: selectedCommentRows[0].reviewer,
             phoneID: selectedCommentRows[0].phone_id,

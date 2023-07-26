@@ -12,7 +12,7 @@ export const ResetEmail = () => {
 
     const changePasswordRequest = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8080/api/auth/reset-password-request', {
+        axios.post('https://phonesellbackend.onrender.com/api/auth/reset-password-request', {
             email: email
         }).then(function (response) {
             if (response.data.status == "0"){

@@ -32,7 +32,7 @@ export const ReviewHide = ({reviewList}) =>{
         
         e.preventDefault();
         // Push to back end
-        axios.post('http://localhost:8080/api/home/hide', {
+        axios.post('https://phonesellbackend.onrender.com/api/home/hide', {
             reviewers: reviewerId,
             phoneID: id,
             commentHide: !isCommentHidden,

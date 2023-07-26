@@ -90,7 +90,7 @@ export const ItemState = ({cartArray, setCartArray, phoneList, BestorSold}) =>{
     const submitComment = (e, id) => {
         e.preventDefault();
         // Push to back end
-        axios.post('http://localhost:8080/api/home/comment', {
+        axios.post('https://phonesellbackend.onrender.com/api/home/comment', {
             reviewers: cookieChecker,
             comments:comment,
             ratings:rating,

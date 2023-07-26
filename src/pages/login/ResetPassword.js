@@ -20,7 +20,7 @@ export const ResetPassword = () => {
     const changePassword = (e) => {
         if (passValid){
             if (password == confirmPassword){
-                axios.post('http://localhost:8080/api/auth/reset-password', {
+                axios.post('https://phonesellbackend.onrender.com/api/auth/reset-password', {
                     token: token,
                     password: password
                 }).then(function (response) {

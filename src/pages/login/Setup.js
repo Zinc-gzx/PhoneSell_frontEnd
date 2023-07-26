@@ -16,7 +16,7 @@ export const Setup = () => {
 
     const setUp = (e) => {
         if (passValid){
-            axios.post('http://localhost:8080/api/auth/sign-up', {
+            axios.post('https://phonesellbackend.onrender.com/api/auth/sign-up', {
                 email: email,
                 password: password,
                 firstname: firstname,
